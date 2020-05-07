@@ -1,8 +1,8 @@
 def emailvalidation():
-    print("You have chosen the email validation option.")
+    print("You have chosen the email validation option")
 
 def creditcardverification():
-    print("You have chosen the credit card verification option.")
+    print("You have chosen the credit card verification option")
 
 def menu():
     ch=int(input("enter 1 for email validation or enter 2 for credit card verification:"))
