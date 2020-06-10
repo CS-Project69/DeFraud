@@ -8,7 +8,7 @@ American_Express = ["34","37"]
 
 #Publisher Check
 if len(a) ==16:
-     print("Yoww")
+     print("Done")
      p = str(input("Enter the mentioned publisher of your card (present in the bottom right corner) in full CAPITALS: "))
      if p == "VISA":
           if string[0] == 4:
