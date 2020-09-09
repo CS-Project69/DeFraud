@@ -10,7 +10,7 @@ of the level of spam in the email given.
 2// Credit Card Fraud Detection:
 
 A powerful machine learning based tool which takes in the user's Credit Card number and the account 
-holder's transactional details to find out if the card or any of the transactional enties are fraudulent.
+holder's transactional details to find out if the card or any of the transactional entries are fraudulent.
 
 3// Aadhar Card Fraud Detection:
 
