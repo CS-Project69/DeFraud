@@ -1,5 +1,9 @@
 #pan card verification
 import random
+import mysql.connector as sql
+con=sql.connect(host="localhost",user="root",passwd="Samarth123",database="samarth")
+mycursor=con.cursor
+
 pan=str(input("enter pan card number: "))
 fname=str(input("enter first name in capital: "))
 lname=str(input("enter last name in capital: "))
