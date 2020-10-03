@@ -7,12 +7,28 @@ data = pd.read_csv(file)
 
 
 #Analysis
-fraud = data[data['Class'] == 1] 
-valid = data[data['Class'] == 0] 
+fraud = data[data['Class'] == 1]
+valid = data[data['Class'] == 0]
+
+print(
+
 outlierFraction = len(fraud)/float(len(valid)) 
 print("Fraction of fraudulent entries: ",outlierFraction) 
 print("Fraud Cases: {}".format(len(fraud)))
 print("Valid Transactions: {}".format(len(valid)))
+
+#Checking
+list1 = []
+for i in list1:
+     list1.append(fraud["Time"])
+print (list1)
+
+inp = int(input("Enter the time of the transaction you want to check: "))
+if inp in list1:
+     print("Fraud")
+     
+else:
+     print("Not Fraud")
 
 #Graphical Plot
 count_classes = pd.value_counts(data['Class'], sort=True)
