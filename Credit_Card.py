@@ -1,5 +1,13 @@
 #Credit Card Validation
-print("---------------------------------------------------------\nWELCOME TO THE CREDIT CARD VALIDATION TOOL\n---------------------------------------------------------")
+print("--------------------------------------------------------------\nWELCOME TO THE CREDIT CARD VALIDATION TOOL\n-------------------------------------------------------------")
+
+"""import mysql.connector
+
+con=mysql.connector.connect(host="localhost", user="root",
+passwd="root",database="COMP")
+cursor = con.cursor()"""
+
+import Kaggle
 
 n = int(input("Please begin by entering the Credit Card Number:  "))
 string = str(n)
@@ -40,6 +48,7 @@ def luhn_algorithm(n):
 
 def publisher(string):
      global check2
+
      if len(string) ==16:
           print("Done")
           p = str(input("Enter the mentioned publisher of your card (present in the bottom right corner) in full CAPITALS: "))
@@ -60,7 +69,6 @@ def publisher(string):
                     check2 = 0
      else:
           print("Please enter a valid Credit Card Number, it must be a 16 digit number for the tool to work!")
-
      return check2
 
 
@@ -68,6 +76,9 @@ def publisher(string):
 def printer():
      if (a and b) == 1:
           print("Your card is genuine, instructions for further steps will follow.")
+          Kaggle.kaggle1()
+     
+          
 
      if (a == 1) and (b== 0):
           print("The publisher and your card number match, but the card number is not verified. Please try to re-enter the number")
@@ -77,12 +88,13 @@ def printer():
 
      if (a and b) == 0:
           print("Your credit card is possibly fraudulent")
-
-
-luhn_algorithm(string)
-b = luhn_algorithm(string)
-publisher(string)
-a = publisher(string)
-printer()
+t = True
+while t:
+     luhn_algorithm(string)
+     b = luhn_algorithm(string)
+     publisher(string)
+     a = publisher(string)
+     printer()
+     break
 
 
