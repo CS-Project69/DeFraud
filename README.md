@@ -19,4 +19,4 @@ to let the user know if the Aadhar Card he/she holds is valid and non-fraudulent
 
 4// PAN Card Fraud Detection:
 
-A simple tool which lets the user know if his/her PAN card is legitimate or not by taking in the PAN Card Number as the input.
+A simple tool which lets the user know if his/her PAN card is legitimate or not by taking in the PAN Card Number and the user's name as the input.
