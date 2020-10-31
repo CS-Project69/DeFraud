@@ -1,12 +1,3 @@
-#Credit Card Validation
-print("--------------------------------------------------------------\nWELCOME TO THE CREDIT CARD VALIDATION TOOL\n-------------------------------------------------------------")
-
-"""import mysql.connector
-
-con=mysql.connector.connect(host="localhost", user="root",
-passwd="root",database="COMP")
-cursor = con.cursor()"""
-
 import Kaggle
 
 n = int(input("Please begin by entering the Credit Card Number:  "))
@@ -50,7 +41,7 @@ def publisher(string):
      global check2
 
      if len(string) ==16:
-          print("Done")
+          print("Alright! So far so good")
           p = str(input("Enter the mentioned publisher of your card (present in the bottom right corner) in full CAPITALS: "))
           if p == "VISA":
                if string[0] == 4:
@@ -75,7 +66,7 @@ def publisher(string):
 
 def printer():
      if (a and b) == 1:
-          print("Your card is genuine, instructions for further steps will follow.")
+          print("Your card is genuine, instructions for further steps will follow")
           Kaggle.kaggle1()
      
           
@@ -90,11 +81,7 @@ def printer():
           print("Your credit card is possibly fraudulent")
 t = True
 while t:
-     luhn_algorithm(string)
      b = luhn_algorithm(string)
-     publisher(string)
      a = publisher(string)
      printer()
      break
-
-
