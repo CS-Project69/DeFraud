@@ -9,6 +9,9 @@ def read():
     nltk.download('punkt')
     stopwords = nltk.corpus.stopwords.words('english')
     punctuation = string.punctuation
+read()    
+    
+    
 
 def pre_process(sms):
     remove_punct = "".join([word.lower() for word in sms if word not in punctuation])
@@ -79,6 +82,7 @@ def Country_Check():
     blacklist = ["Nigeria","Armenia","Uganda","New Zealand"]
     if country in blacklist:
         spam_counter = spam_counter + 12
+        
 
      
 #Pre-processing the input before prediction:
