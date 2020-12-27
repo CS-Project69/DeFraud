@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <meta charset="UTF-8">
+        <title>XYZ</title>
+        <link rel="stylesheet" href="/static/images/style.css">
+    </head>
+    <body style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <div class="container">
+            <header class="nav-area">
+               <nav>
+                   <h2 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">FDS</h2>
+                   <ul style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                       <li><a class="active" href="index.html">Home</a></li>
+                       <li><a href='{% url "call"%}'>Tools</a></li>
+                       <li><a href='{% url "about"%}'>About</a></li>
+                   </ul>
+                </nav> 
+            </header>
+            <div class="banner-area" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <div>
+                    <h1>
+                        FRAUD DETECTION SYSTEM
+                    </h1>
+                    <p>
+                        This is an interactive website created to detect frauds commited in various fields.
+                    </p>
+                    <a href='{% url "contact"%}'>Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </body>

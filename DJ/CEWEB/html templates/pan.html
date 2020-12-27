@@ -1,0 +1,39 @@
+<html>
+    <style>
+        div {
+          background-color: lightgrey;
+          width: 80px;
+          border: 15px solid green;
+          padding: 40px;
+          margin: 20px;
+        }
+
+        .center {
+            margin: auto;
+            width: 60%;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+
+        
+    </style>
+    <div class="center">
+    <form action='{% url "panv" %}' method="POST"> {% csrf_token %} 
+        Enter Pan Number:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=10 name="Panno" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+        <br>
+        Enter First Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="first" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+        <br>
+        Enter Last Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="second" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+        <br>
+        <div>
+        {% if  captcha %}
+        {{ captcha }}
+        {% endif %}
+        <br>
+        </div>
+        Enter the captcha displayed above: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="captchas" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+        <input type="Submit" value="Submit"></input>
+    </form>
+    </div>
+
+</html>

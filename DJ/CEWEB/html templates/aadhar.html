@@ -1,0 +1,16 @@
+<html>
+    <style>
+        .center {
+            margin: auto;
+            width: 60%;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+    </style>
+    <div class="center">
+    <form action='{% url "aadhar" %}' method="POST"> {% csrf_token %} 
+        Enter Aadhar Number:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="number" maxlength=12 name="Aadhar" ></input>
+        <input type="Submit" value="Submit"></input>
+    </form>
+    </div>
+</html>

@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+
+li a:hover:not(.active) {
+    background-color: rgb(110, 1, 1);
+  }
+  
+  .active {
+    background-color: #3d0ebe;
+  }
+
+a{
+   text-decoration: none; 
+}
