@@ -75,4 +75,4 @@ def panv(request):
         captcha=''
         return render(request,'notverified.html')
     
-
+'''This function verifies pan'''
