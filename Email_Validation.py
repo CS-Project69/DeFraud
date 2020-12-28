@@ -83,6 +83,9 @@ def Country_Check():
     if country in blacklist:
         spam_counter = spam_counter + 12
         
+inout()
+CountryCheck()
+
 
      
 #Pre-processing the input before prediction:
