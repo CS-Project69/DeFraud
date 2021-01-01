@@ -24,6 +24,7 @@ from django.contrib import admin
 from django.urls import path
 from addNew import views
 from panverify import views as panviews
+from creditv import views as creditviews
 
 
 
@@ -34,5 +35,7 @@ urlpatterns = [
     path('call/',views.call,name='call'),
     path('about/',views.about,name='about'),
     path('aadhar/',views.aadhar,name='aadhar'),
-    path('panv/',panviews.panv,name='panv')
+    path('panv/',panviews.panv,name='panv'),
+    path('creditv/',creditviews.creditv,name='creditv'),
+    path('valid/',creditviews.valid,name='valid')
 ]
