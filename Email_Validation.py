@@ -15,7 +15,7 @@ def read():
 data = read()
 
 def input1():
-    user_input = input("Please paste the body of the Email here: ")
+    user_input = str(input("Please paste the body of the Email here: "))
 
     print("Please enter a phone number if present in the E-Mail body: ")
     print("For example: +91xxxxxxxxxx")
