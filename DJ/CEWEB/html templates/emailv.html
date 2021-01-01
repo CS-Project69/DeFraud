@@ -1,0 +1,30 @@
+<html>
+    <style>
+        div {
+          background-color: lightgrey;
+          width: 80px;
+          border: 15px solid green;
+          padding: 40px;
+          margin: 20px;
+        }
+
+        .center {
+            margin: auto;
+            width: 60%;
+            border: 3px solid #73AD21;
+            padding: 10px;
+        }
+
+        
+    </style>
+    <div class="center">
+    <form action='{% url "emailv" %}' method="POST"> {% csrf_token %} 
+        Paste Email Body:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=500 name="emailbody" onCopy='return true' onDrag='return false' onDrop='return false' onPaste='return true' autocomplete=off></input><br>
+        <br>
+        Enter Phone no.: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="phoneno" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+        <br>
+        <input type="Submit" value="Submit"></input>
+    </form>
+    </div>
+
+</html>

@@ -25,7 +25,7 @@ from django.urls import path
 from addNew import views
 from panverify import views as panviews
 from creditv import views as creditviews
-
+from emailv import views as emailviews
 
 
 urlpatterns = [
@@ -37,5 +37,6 @@ urlpatterns = [
     path('aadhar/',views.aadhar,name='aadhar'),
     path('panv/',panviews.panv,name='panv'),
     path('creditv/',creditviews.creditv,name='creditv'),
-    path('valid/',creditviews.valid,name='valid')
+    path('valid/',creditviews.valid,name='valid'),
+    path('emailv/',emailviews.emailv,name='emailv')
 ]
