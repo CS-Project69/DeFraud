@@ -14,12 +14,42 @@
             border: 3px solid #73AD21;
             padding: 10px;
         }
+        
+        input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
 
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
         
     </style>
     <div class="center">
     <form action='{% url "emailv" %}' method="POST"> {% csrf_token %} 
-        Paste Email Body:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=500 name="emailbody" onCopy='return true' onDrag='return false' onDrop='return false' onPaste='return true' autocomplete=off></input><br>
+        <label for="emailbody">Paste the body of the Email here:</label>
+        <textarea id="emailbody" name="emailbody" placeholder="Write something.." style="height:200px"></textarea>
         <br>
         Enter Phone no.: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="phoneno" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
         <br>

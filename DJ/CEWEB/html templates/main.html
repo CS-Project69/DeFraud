@@ -1,9 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<meta name="viewport" content="width=device-width, initial-scale=1"> 
-<head>
-<style>
-  
+<html>
+    <style>
+        ul{
+            list-style: none;}
+        a{
+            text-decoration: none;}
+            li a:hover:not(.active) {
+                background-color: rgb(47, 201, 8);}
+               .active {
+                   background-color: #4CAF50;}
+        .nav-area{
+            background: #262626;}
+        .nav-area nav{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;}
+        .nav-area ul{
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            order: 1;
+            width: 100%;
+            margin-top: 15px;}
+        .nav-area nav a{
+            color: #fff;}   
+        .nav-area ul li:not(:last-child){
+            padding-right: 15px;} 
+            
+            @media screen and (min-width: 550px){
+    .nav-area ul{
+        width: auto;
+        margin-top: 0;
+
+    }
+}
+@media screen and (min-width: 768px){
+    body{
+        font-size: 18px;
+    }
+    .banner-area{
+        padding-left: 60px;
+    }
+    .banner-area h1{
+        font-size: 30px;
+    }
+    .nav-area{
+        padding: 20px 80px;
+    }
+}
 
 * {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
@@ -75,172 +125,30 @@ img {vertical-align: middle;}
   .text {font-size: 11px}
 }
 
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  color: antiquewhite;
-  background-color: rgb(10, 10, 10);
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  top: 0;
-}
-
-
-
-li {
-  float: right;
-}
-
-li a {
-  display: block;
-  color: rgb(245, 247, 248);
-  text-align: center;
-  padding: 14px 16px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  
-}
-
-li a:hover:not(.active) {
-  background-color: rgb(47, 201, 8);
-}
-
-.active {
-  background-color: #4CAF50;
-}
-
-body{background-color: rgb(14, 13, 13);}
-
-.logo{
-    color: #fff;
-}
-
-</style>
-</head>
-<body>
-<header style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
-  <h2 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">FDS</h2>
-  <ul>
-    <li><a href='{% url "about"%}'>About</a></li>
-    <li><a href='{% url "contact"%}'>Contact Us</a></li>
-    <li><a class="active" href="main.html">Tools</a></li>
-    <li><a href='{% url "index"%}'>Home</a></li>
-  </ul>
-</header>
-
-  
-
-  <div class="slideshow-container">
-
-
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="/static/images/welcome.jpg" style="width:1370px;height:400px";>
-      <div class="text"></div>
-    </div>
-    
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="/static/images/fdm.jpg" style="width:1370px;height:400px";>
-      <div class="text"></div>
-    </div>
-    
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="/static/images/fdj.jpg" style="width:1370px;height:400px";>
-      <div class="text"></div>
-    </div>
-
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="/static/images/email1.jpg" style="width:1370px;height:400px";>
-      <div class="text"></div>
-    </div>
-
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="/static/images/aadhaar.jpg" style="width:1370px;height:400px";>
-      <div class="text"></div>
-    </div>
-    
-    <div class="mySlides fade">
-      <div class="numbertext"></div>
-      <img src="/static/images/know.jpg" style="width:1370px;height:400px";> 
-      <div class="text"></div>
-    </div>
-    
-  </div>
-  <br>
-    
-    <div style="text-align:center">
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span> 
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-    
-    <script>
-    var slideIndex = 0;
-    showSlides();
-    
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      var dots = document.getElementsByClassName("dot");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";  
-      dots[slideIndex-1].className += " active";
-      setTimeout(showSlides, 4000); // Change image every 4 seconds
-    }
-    </script>
-
-  <body>
-    
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-.column {
+.container {
+  height: 500px;
+  position:relative;
   float: left;
   width: 50%;
-  
+  border: 3px solid green;
+}
+
+.container1 {
+  height: 500px;
+  position:relative;
+  float: right;
+  width: 50%;
+  border: 3px solid green;
 }
 
 
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-</style>
-<div class="row">
-  <div class="column">
-    <style>
-    .container {
-      position: relative;
-      width: 100%;
-      max-width: 600px;
-    }
-    
-    .container img {
-      width: 100%;
-      max-height: 400px;
-    }
-    
-    .container .btn {
+
+.container img {
+        width: 100%;
+        height: fit-content;
+      }
+
+.container .btn {
       position: absolute;
       top: 50%;
       left: 50%;
@@ -265,7 +173,7 @@ body{background-color: rgb(14, 13, 13);}
       transition: all 0.3s ease 0s;
     }
     
-    .container .btn:hover {
+.container .btn:hover {
       color: #404040 !important;
       font-weight: 700 !important;
       letter-spacing: 3px;
@@ -274,63 +182,165 @@ body{background-color: rgb(14, 13, 13);}
       -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
       transition: all 0.3s ease 0s;
     }
-      </style>
-    <div class="container">
-      <img src="/static/images/aadhaar.jpg" style="width:100%">
-      <button class="btn"><A href = '{% url "aadhar"%}'> Aadhar </A></button>
-    </div>
-  </div>
 
-  <div class="container">
-    <img src="/static/images/creditcard.jpg" style="width:100%">
-    <button class="btn"><A href = '{% url "creditv"%}'>CREDITCARD VERIFICATION</A></button>
-  </div>
-  <div class="column">
-    <style>
-      .container {
-        position: relative;
-        width: 100%;
-        max-width: 900px;
-      }
-      
-      .container img {
+.container1 img {
         width: 100%;
         height: auto;
       }
-      
-      .container .btn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: #555;
-        color: white;
-        font-size: 16px;
-        padding: 12px 24px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        text-align: center;
-      }
-      
-      .container .btn:hover {
-        background-color: black;
-      }
-        </style>
-        <div class="container">
-          <img src="/static/images/pan.jpg" style="width:100%">
-          <button class="btn"><A href = '{% url "panv"%}'>PAN VERIFICATION</A></button>
+
+.container1 .btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      background-color: #555;
+      color: white;
+      font-size: 16px;
+      padding: 12px 24px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-align: center;
+      border: none;
+      background: #404040;
+      color: #ffffff !important;
+      font-weight: 100;
+      padding: 20px;
+      text-transform: uppercase;
+      border-radius: 6px;
+      display: inline-block;
+      transition: all 0.3s ease 0s;
+    }
+    
+.container1 .btn:hover {
+      color:#404040 !important;
+      font-weight: 700 !important;
+      letter-spacing: 3px;
+      background: none;
+      -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+      transition: all 0.3s ease 0s;
+    }          
+
+    </style>
+    <header class="nav-area">
+        <nav>
+            <h2 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">FDS</h2>
+            <ul style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <li><a href='{% url "index"%}'>Home</a></li>
+                <li><a class="active" href="main.html">Tools</a></li>
+                <li><a href='{% url "about"%}'>About</a></li>
+                <li><a href='{% url "contact"%}'>Contact Us</a></li>
+            </ul>
+        </nav> 
+     </header>
+    
+     <div class="slideshow-container">
+
+
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="/static/images/welcome.jpg" style="width:1370px;height:400px";>
+          <div class="text"></div>
         </div>
-
         
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="/static/images/fdm.jpg" style="width:1370px;height:400px";>
+          <div class="text"></div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="/static/images/fdj.jpg" style="width:1370px;height:400px";>
+          <div class="text"></div>
+        </div>
+    
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="/static/images/email1.jpg" style="width:1370px;height:400px";>
+          <div class="text"></div>
+        </div>
+    
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="/static/images/aadhaar.jpg" style="width:1370px;height:400px";>
+          <div class="text"></div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="/static/images/know.jpg" style="width:1370px;height:400px";> 
+          <div class="text"></div>
+        </div>
+        
+      </div>
+      <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+        
+        <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 4000); // Change image every 4 seconds
+        }
+        </script>
 
-        <div class="container">
-          <img src="/static/images/email.jpg" style="width:100%">
-          <button class="btn"><A href = '{% url "emailv"%}'>EMAIL VERIFICATION</A></button>
-   </div>
-  </div>
-</div>
-</body>
+        <body style="background-color:black;">
+          <div>
+            <div class="container">
+                    <img src="/static/images/aadhaar.jpg" style="width:100%">
+                    <button class="btn"><A href = '{% url "aadhar"%}'><p style="color:yellow;">AADHAR</p></A></button>
+                </div>
+            </div>
+
+            <div class="container1">
+                    <img src="/static/images/creditcard.jpg" style="width:100%">
+                    <button class="btn"><A href = '{% url "creditv"%}'><p style="color:yellow;">CREDITCARD VERIFICATION</p></A></button>
+                </div>
+            </div>
+          </div>
+
+          <div>  
+            <div class="container">
+                    <img src="/static/images/pan.jpg" style="width:100%">
+                    <button class="btn"><A href = '{% url "panv"%}'><p style="color:yellow;">PAN VERIFICATION</p></A></button>
+                </div>
+            </div>
+
+            <div class="container1">
+                    <img src="/static/images/email.jpg" style="width:100%">
+                    <button class="btn"><A href = '{% url "emailv"%}'><p style="color:yellow;">EMAIL VERIFICATION</p></A></button>
+                </div>
+            </div>
+          </div>  
+            
+            
+        </body>  
+          
+       
+    
 </html>
-

@@ -69,35 +69,34 @@ input[type=submit]:hover {
 </head>
 <body>
 
-<h2>Responsive Contact Section</h2>
-<p>Resize the browser window to see the effect.</p>
+
 
 <div class="container">
   <div style="text-align:center">
-    <h2>Contact Us</h2>
-    <p>Swing by for a cup of coffee, or leave us a message:</p>
+    
   </div>
   <div class="row">
     <div class="column">
-      <img src="/w3images/map.jpg" style="width:100%">
+      <img src="/static/images/contactus.jpg" style="width:100%">
     </div>
     <div class="column">
-      <form action="/action_page.php">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-        <label for="country">Country</label>
+      
+
+    <form action='{% url "contactv" %}' method="POST"> {% csrf_token %} 
+        Enter First Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="firstname" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+        <br>
+        Enter Last Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="secondname" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+        <br>
         <select id="country" name="country">
           <option value="India">India</option>
           <option value="australia">Australia</option>
           <option value="canada">Canada</option>
           <option value="usa">USA</option>
         </select>
-        <label for="subject">How can we help you?</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:170px"></textarea>
-        <input type="submit" value="Submit">
-      </form>
+        <label for="feedback">How can we help you?</label>
+        <textarea id="feedback" name="feedback" placeholder="Write something.." style="height:200px"></textarea>
+        <input type="Submit" value="Submit"></input>
+    </form>
     </div>
   </div>
 </div>

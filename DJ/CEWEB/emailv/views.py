@@ -16,13 +16,10 @@ def about(request):
 def contact(request):
     return render(request,'contact us.html')
 
-stopwords = nltk.corpus.stopwords.words('english')
-punctuation = string.punctuation
-
 def read():
     data = pd.read_csv('SPAM.txt', sep = '\t', header=None, names=["label", "sms"])
-    '''nltk.download('stopwords')
-    nltk.download('punkt')'''
+    nltk.download('stopwords')
+    nltk.download('punkt')
     return data
 
 def pre_process(sms):
@@ -31,12 +28,17 @@ def pre_process(sms):
     remove_stopwords = [word for word in tokenize if word not in stopwords]
     return remove_stopwords
 
+spam_counter = 0
+ham_counter = 0
+spam_words = []
+ham_words = []
 def emailv(request):
-    spam_counter = 0
-    ham_counter = 0
-    spam_words = []
-    ham_words = []
     data=read()
+    global spam_counter
+    global ham_counter
+    global spam_words
+    global ham_words
+    
     stopwords = nltk.corpus.stopwords.words('english')
     punctuation = string.punctuation
     if request.method=='GET':
@@ -51,6 +53,8 @@ def emailv(request):
             from phonenumbers import carrier
             service_provider = phonenumbers.parse(phoneno)
             carry=carrier.name_for_number(service_provider,'en')
+        if len(phoneno)!=13:
+            return render(request,'wronginput.html')
         di={}
         di['some']=carry
         di['some1']=country

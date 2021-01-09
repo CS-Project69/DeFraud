@@ -26,6 +26,7 @@ from addNew import views
 from panverify import views as panviews
 from creditv import views as creditviews
 from emailv import views as emailviews
+from contactus import views as contactviews
 
 
 urlpatterns = [
@@ -38,5 +39,6 @@ urlpatterns = [
     path('panv/',panviews.panv,name='panv'),
     path('creditv/',creditviews.creditv,name='creditv'),
     path('valid/',creditviews.valid,name='valid'),
-    path('emailv/',emailviews.emailv,name='emailv')
+    path('emailv/',emailviews.emailv,name='emailv'),
+    path('contactv/',contactviews.contactv,name='contactv')
 ]
