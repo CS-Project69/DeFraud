@@ -1,45 +1,55 @@
+
+
+
+
+
 <html>
     <style>
-        div {
-          background-color: lightgrey;
-          width: 130px;
-          border: 15px solid green;
-          padding: 40px;
-          margin: 20px;
-        }
-
         .center {
-            margin: auto;
-            width: 60%;
+            margin:auto;
+            width: 80%;
             border: 3px solid #73AD21;
+            height:max-content;
             padding: 10px;
         }
 
         
+
+
+        
     </style>
-<div class="center">  
-Fraud
+    <link rel="stylesheet" href="/static/images/style3.css">
+<body>
+    <div class="container">
+    <header class="nav-area">
+        <nav>
+            <h2 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">FDS</h2>
+            <ul style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <li><a href='{% url "index"%}'>Home</a></li>
+                <li><a href='{% url "call"%}'>Tools</a></li>
+                <li><a href='{% url "contact"%}'>Contact Us</a></li>
+            </ul>
+         </nav> 
+    </header>
+    <div class="banner-area" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <div class="center">
+            This is a fraud case.
 <br>
 <br>
 <b>Statistics</b>
-<p>No. of fraudlent cases:</p>
-<div>
+<p>No. of fraudlent cases:
     {{ some_string }}
-<br>
-</div>
-<p>No.of valid cases:</p>
-<div>
+</p>    
+<p>No.of valid cases:
     {{ some_other }}
-    <br>    
-</div>
-<p>Fraction of fraudlent cases:</p>
-<div>
-    {{ other_other }}
-    <br>    
-</div>
-
-<br>
-<a href="http://www.cybercelldelhi.in/onlinetransactions.html">Click the link for further assistance.</a>
-
-</div>
+</p>        
+<p>Fraction of fraudlent cases:
+    {{ other_other }}   
+</p>
+<a href="http://www.cybercelldelhi.in/onlinetransactions.html" target="_blank">Click here for further assistance.</a>
+            
+        </div>
+    </div>
+    </div>
+</body>
 </html>

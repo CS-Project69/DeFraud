@@ -1,11 +1,19 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 body {
-  background-color: coral;
-}    
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color:blue;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -21,15 +29,19 @@ html {
   padding: 0 8px;
 }
 
-@media screen and (max-width: 650px) {
-  .column {
-    width: 100%;
-    display: block;
-  }
-}
-
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border:10px solid black;
+  background: #ffd73e33;
+  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='33' height='50' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
+}
+
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #474e5d;
+  color: white;
 }
 
 .container {
@@ -43,7 +55,7 @@ html {
 }
 
 .title {
-  color: rgb(13, 10, 180);
+  color: grey;
 }
 
 .button {
@@ -61,17 +73,36 @@ html {
 .button:hover {
   background-color: #555;
 }
+
+@media screen and (max-width: 650px) {
+  .column {
+  
+    display: block;
+  }
+}
 </style>
 </head>
+<link rel="stylesheet" href="/static/images/style3.css">
 <body>
+    <div class="container">
+    <header class="nav-area">
+        <nav>
+            <h2 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">FDS</h2>
+            <ul style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <li><a href='{% url "index"%}'>Home</a></li>
+                <li><a href='{% url "call"%}'>Tools</a></li>
+                <li><a href='{% url "contact"%}'>Contact Us</a></li>
+            </ul>
+         </nav> 
+    </header>
 
-<h2> Meet The Team </h2>
-<br>
 
+
+<h1 style="text-align:center">Our Team</h1>
 <div class="row">
   <div class="column">
     <div class="card">
-      <img src="/static/images/prabhav.jpg" alt="Prabhav" style="width:100%">
+      <img src="/static/images/prabhav.jpg" alt="Jane" style="width:100%">
       <div class="container">
         <h2>Prabhav Pandey</h2>
         <p class="title">Member</p>
@@ -84,7 +115,7 @@ html {
 
   <div class="column">
     <div class="card">
-      <img src="/w3images/team2.jpg" alt="Samarth" style="width:100%">
+      <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
       <div class="container">
         <h2>Samarth Dixit</h2>
         <p class="title">Member</p>
@@ -97,7 +128,7 @@ html {
   
   <div class="column">
     <div class="card">
-      <img src="/static/images/Ram.jpg" alt="Ramanujan" style="width:100%">
+      <img src="/static/images/Ram.jpg" alt="John" style="width:100%">
       <div class="container">
         <h2>Ramanujan Sadagopan</h2>
         <p class="title">Member</p>

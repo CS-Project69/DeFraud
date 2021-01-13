@@ -32,7 +32,6 @@ from contactus import views as contactviews
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index'),
-    path('contact/',views.contact,name='contact'),
     path('call/',views.call,name='call'),
     path('about/',views.about,name='about'),
     path('aadhar/',views.aadhar,name='aadhar'),
@@ -40,5 +39,5 @@ urlpatterns = [
     path('creditv/',creditviews.creditv,name='creditv'),
     path('valid/',creditviews.valid,name='valid'),
     path('emailv/',emailviews.emailv,name='emailv'),
-    path('contactv/',contactviews.contactv,name='contactv')
+    path('contact/',contactviews.contact,name='contact')
 ]

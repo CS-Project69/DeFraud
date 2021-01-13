@@ -10,9 +10,9 @@ def call(request):
 def about(request):
     return render(request,'about.html')
 
-def contactv(request):
+def contact(request):
     if request.method=='GET':
-        return render(request,'contactus.html')
+        return render(request,'contact us.html')
     if request.method=='POST':
         f=request.POST['firstname']
         s=request.POST['secondname']
@@ -21,4 +21,5 @@ def contactv(request):
         with open('feedback.csv','a') as csvfile:
             writer=csv.writer(csvfile)
             writer.writerow([f,s,c,feed])
+        return render(request,'thankyou.html')    
             

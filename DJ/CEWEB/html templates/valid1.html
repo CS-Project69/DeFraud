@@ -1,30 +1,67 @@
-<html>
-    <style>
-        div {
-          background-color: lightgrey;
-          width: 80px;
-          border: 15px solid green;
-          padding: 40px;
-          margin: 20px;
-        }
 
-        .center {
-            margin: auto;
-            width: 60%;
-            border: 3px solid #73AD21;
-            padding: 10px;
-        }
 
-        
-    </style>
-    <div class="center">
-        <form action='{% url "valid" %}' method="POST"> {% csrf_token %} 
-            Enter filename:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=16 name="filename" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
-            <br>
-            Enter timestamp:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=16 name="timestamp" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
-            <br>
-            <input type="Submit" value="Submit"></input>
-        </form>
-        </div>
+
+
+
+
+    <html>
+        <style>
+            .center {
+                margin:auto;
+                width: 80%;
+                border: 3px solid #73AD21;
+                height:max-content;
+                padding: 10px;
+            }
     
+            .center1 {
+                margin:auto;
+                width: 20%;
+                padding: 10px;
+            }
+    
+            input[type=submit] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+    
+    
+            
+        </style>
+        <link rel="stylesheet" href="/static/images/style3.css">
+    <body>
+        <div class="container">
+        <header class="nav-area">
+            <nav>
+                <h2 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">FDS</h2>
+                <ul style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                    <li><a href='{% url "index"%}'>Home</a></li>
+                    <li><a href='{% url "call"%}'>Tools</a></li>
+                    <li><a href='{% url "contact"%}'>Contact Us</a></li>
+                </ul>
+             </nav> 
+        </header>
+        <div class="banner-area" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            <div class="center">
+                <form action='{% url "valid" %}' method="POST"> {% csrf_token %} 
+                    Enter filename:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=16 name="filename" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+                    <br>
+                    Enter timestamp:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=16 name="timestamp" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+                    <br>
+                <div class="center1">
+                    <input type="Submit" value="Submit"></input>
+                </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </body>
     </html>

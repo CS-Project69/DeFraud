@@ -1,40 +1,65 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <html>
     <style>
-        div {
-          background-color: lightgrey;
-          width: 130px;
-          border: 15px solid green;
-          padding: 40px;
-          margin: 20px;
-        }
-
         .center {
-            margin: auto;
-            width: 60%;
+            margin:auto;
+            width: 80%;
             border: 3px solid #73AD21;
+            height:max-content;
             padding: 10px;
         }
 
         
+
+
+        
     </style>
-    
-<div class="center">  
-    Results for entered data:
-<p>Carrier is:</p>
-<div>
-    {{ some }}
+    <link rel="stylesheet" href="/static/images/style3.css">
+<body>
+    <div class="container">
+    <header class="nav-area">
+        <nav>
+            <h2 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">FDS</h2>
+            <ul style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <li><a href='{% url "index"%}'>Home</a></li>
+                <li><a href='{% url "call"%}'>Tools</a></li>
+                <li><a href='{% url "contact"%}'>Contact Us</a></li>
+            </ul>
+         </nav> 
+    </header>
+    <div class="banner-area" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <div class="center">
+            Results for entered data:
 <br>
-</div>
-<p>Country is:</p>
-<div>
+<br>
+<b>Statistics</b>
+<p>Carrier is:
+    {{ some }}
+</p>    
+<p>Country is:
     {{ some1 }}
-    <br>    
-</div>
-<p>The percentage that the entered input is a spam is:</p>
-<div>
-    {{ some2 }}
-    <br>    
-</div>
-<a href="https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams">Click the link for further assistance</a>
-</div>
+</p>        
+<p>The percentage that the entered input is a spam is:
+    {{ some2 }}   
+</p>
+<a href="https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams" target="_blank">Click here for further assistance.</a>
+            
+        </div>
+    </div>
+    </div>
+</body>
 </html>

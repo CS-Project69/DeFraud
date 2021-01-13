@@ -1,32 +1,28 @@
+
+
+
+
+
+
+
+
 <html>
     <style>
-        div {
-          background-color: lightgrey;
-          width: 80px;
-          border: 15px solid green;
-          padding: 40px;
-          margin: 20px;
-        }
-
         .center {
-            margin: auto;
-            width: 60%;
+            margin:auto;
+            width: 35%;
             border: 3px solid #73AD21;
+            height:max-content;
             padding: 10px;
         }
-        
-        input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
 
-input[type=submit] {
+        .center1 {
+            margin:auto;
+            width: 20%;
+            padding: 10px;
+        }
+
+        input[type=submit] {
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
@@ -39,22 +35,37 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
+
         
     </style>
-    <div class="center">
-    <form action='{% url "emailv" %}' method="POST"> {% csrf_token %} 
-        <label for="emailbody">Paste the body of the Email here:</label>
-        <textarea id="emailbody" name="emailbody" placeholder="Write something.." style="height:200px"></textarea>
-        <br>
-        Enter Phone no.: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="phoneno" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
-        <br>
-        <input type="Submit" value="Submit"></input>
-    </form>
+    <link rel="stylesheet" href="/static/images/style3.css">
+<body>
+    <div class="container">
+    <header class="nav-area">
+        <nav>
+            <h2 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">FDS</h2>
+            <ul style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <li><a href='{% url "index"%}'>Home</a></li>
+                <li><a href='{% url "call"%}'>Tools</a></li>
+                <li><a href='{% url "contact"%}'>Contact Us</a></li>
+            </ul>
+         </nav> 
+    </header>
+    <h3 style="font-family: Verdana, Geneva, Tahoma, sans-serif;">With this tool, gone are the days where your inbox is filled with harmful E-Mails!</h3>
+    <div class="banner-area" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+        <div class="center">
+            <form action='{% url "emailv" %}' method="POST"> {% csrf_token %} 
+              <label for="emailbody">Paste the body of the Email here:</label>
+              <textarea id="emailbody" name="emailbody" placeholder="Write something.." style="height:200px; width:420px ;"></textarea>
+              <br>
+              Enter Phone no.: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="phoneno" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+              <br>
+            <div class="center1">
+                <input type="Submit" value="Submit"></input>
+            </div>
+            </form>
+        </div>
     </div>
-
+    </div>
+</body>
 </html>

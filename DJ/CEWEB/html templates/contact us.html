@@ -67,7 +67,19 @@ input[type=submit]:hover {
 }
 </style>
 </head>
+<link rel="stylesheet" href="/static/images/style3.css">
 <body>
+    <div class="container">
+    <header class="nav-area">
+        <nav>
+            <h2 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">FDS</h2>
+            <ul style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                <li><a href='{% url "index"%}'>Home</a></li>
+                <li><a href='{% url "call"%}'>Tools</a></li>
+                <li><a href='{% url "about"%}'>About</a></li>
+            </ul>
+         </nav> 
+    </header>
 
 
 
@@ -82,7 +94,7 @@ input[type=submit]:hover {
     <div class="column">
       
 
-    <form action='{% url "contactv" %}' method="POST"> {% csrf_token %} 
+    <form action='{% url "contact" %}' method="POST"> {% csrf_token %} 
         Enter First Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="firstname" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
         <br>
         Enter Last Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="secondname" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
