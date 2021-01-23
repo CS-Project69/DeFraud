@@ -1,144 +1,121 @@
-
-
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-  background-color:blue;
-}
-
-html {
+* {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
+/* The grid: Three equal columns that floats next to each other */
 .column {
   float: left;
-  width: 33.3%;
-  margin-bottom: 16px;
-  padding: 0 8px;
-}
-
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border:10px solid black;
-  background: #ffd73e33;
-  border-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='33' height='50' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E %3Cstyle%3Epath%7Banimation:stroke 5s infinite linear%3B%7D%40keyframes stroke%7Bto%7Bstroke-dashoffset:776%3B%7D%7D%3C/style%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='0%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232d3561' /%3E%3Cstop offset='25%25' stop-color='%23c05c7e' /%3E%3Cstop offset='50%25' stop-color='%23f3826f' /%3E%3Cstop offset='100%25' stop-color='%23ffb961' /%3E%3C/linearGradient%3E %3Cpath d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(%23g)' stroke-width='3' stroke-dasharray='388'/%3E %3C/svg%3E") 1;
-}
-
-
-.about-section {
+  width: 25%;
   padding: 50px;
   text-align: center;
-  background-color: #474e5d;
-  color: white;
-}
-
-.container {
-  padding: 0 16px;
-}
-
-.container::after, .row::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.title {
-  color: grey;
-}
-
-.button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
+  font-size: 25px;
   cursor: pointer;
-  width: 100%;
+  color: white;
 }
 
-.button:hover {
-  background-color: #555;
+.containerTab {
+  padding: 20px;
+  color: white;
+  height: 200px;
 }
 
-@media screen and (max-width: 650px) {
-  .column {
-  
-    display: block;
-  }
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Closable button inside the container tab */
+.closebtn {
+  float: right;
+  color: white;
+  font-size: 35px;
+  cursor: pointer;
 }
 </style>
 </head>
-<link rel="stylesheet" href="/static/images/style3.css">
-<body>
-    <div class="container">
-    <header class="nav-area">
-        <nav>
-            <h2 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">FDS</h2>
-            <ul style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
-                <li><a href='{% url "index"%}'>Home</a></li>
-                <li><a href='{% url "call"%}'>Tools</a></li>
-                <li><a href='{% url "contact"%}'>Contact Us</a></li>
-            </ul>
-         </nav> 
-    </header>
-
-
-
-<h1 style="text-align:center">Our Team</h1>
-<div class="row">
-  <div class="column">
-    <div class="card">
-      <img src="/static/images/prabhav.jpg" alt="Jane" style="width:100%">
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif; background:rgb(135, 5, 241);">
+  <link rel="stylesheet" href="/static/images/style3.css">
       <div class="container">
-        <h2>Prabhav Pandey</h2>
-        <p class="title">Member</p>
-        <p>Email and Credit card verification.</p>
-        <p>prabhavp380@gmail.com</p>
-        <p><button class="button"><a href='Prab.html'>Contact</a></button></p>
-      </div>
-    </div>
-  </div>
+      <header class="nav-area">
+          <nav>
+              <h2 class="logo" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">FDS</h2>
+              <ul style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+                  <li><a href='{% url "index"%}'>Home</a></li>
+                  <li><a href='{% url "call"%}'>Tools</a></li>
+                  <li><a href='{% url "about"%}'>About</a></li>
+              </ul>
+           </nav> 
+      </header>  
 
-  <div class="column">
-    <div class="card">
-      <img src="/w3images/team2.jpg" alt="Mike" style="width:100%">
-      <div class="container">
-        <h2>Samarth Dixit</h2>
-        <p class="title">Member</p>
-        <p>Pan and Credit card verification.</p>
-        <p>samurai.dixit2@gmail.com</p>
-        <p><button class="button"><a href='Sam.html'>Contact</a></button></p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="column">
-    <div class="card">
-      <img src="/static/images/Ram.jpg" alt="John" style="width:100%">
-      <div class="container">
-        <h2>Ramanujan Sadagopan</h2>
-        <p class="title">Member</p>
-        <p>Django and aadhar verification.</p>
-        <p>emailheyram15@gmail.com</p>
-        <p><button class="button"><a href='Ram.html'>Contact</a></button></p>
-      </div>
-    </div>
-  </div>
+<div style="text-align:center">
+  <h2>About Our Tools</h2>
+  <p>Click on each of the boxes below for information on each of Our tools:</p>
 </div>
 
+<!-- Three columns -->
+<div class="row">
+  <div class="column" onclick="openTab('b1');" style="background:green;">
+    Pan
+  </div>
+  <div class="column" onclick="openTab('b2');" style="background:blue;">
+    Email
+  </div>
+  <div class="column" onclick="openTab('b3');" style="background:red;">
+    Credit Card
+  </div>
+  <div class="column" onclick="openTab('b4');" style="background:black;">
+    Aadhaar
+  </div>
+  
+</div>
+
+<!-- Full-width columns: (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background:green">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Pan Card Verification</h2>
+  <p>A simple tool which lets the user know if his/her PAN card is legitimate or not by taking in the PAN Card Number and the user's name as the input.</p>
+</div>
+
+<div id="b2" class="containerTab" style="display:none;background:blue">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Email Verification</h2>
+  <p>A tool which analyses the email given in as input and cross references it with commonly used terms that are used in spam emails sent to people across the world, it also takes into account several factors like the location and phone number of the sender to render out a score on a scale of 0 to 100 indicative of the level of spam in the email given.</p>
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:red">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Credit Card Verification</h2>
+  <p>A powerful machine learning based tool which takes in the user's Credit Card number and the account holder's transactional details to find out if the card or any of the transactional entries are fraudulent.</p>
+</div>
+
+<div id="b4" class="containerTab" style="display:none;background:black">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Aadhar Number Verification</h2>
+  <p>An easy to use utility which takes in the user's Aadhar Card number as the input and runs an algorithm to let the user know if the Aadhar Card he/she holds is valid and non-fraudulent or not.</p>
+</div>
+
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
+
 </body>
-</html>
+</html> 

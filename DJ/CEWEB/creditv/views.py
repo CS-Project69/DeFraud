@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import csv
 import string
+import matplotlib.pyplot as plt
 
 def creditv(request):
     if request.method=='GET':
@@ -17,7 +18,7 @@ def creditv(request):
             return render(request,'valid1.html')
             
 
-        if (a == 1) and (b== 0):
+        if (a == 1) and (b == 0):
             return render(request,'wrongcredit1.html')
             print("The publisher and your card number match, but the card number is not verified. Please try to re-enter the number")
 
@@ -114,28 +115,27 @@ def valid(request):
             reader = csv.reader(f)
             for row in reader:
                 if row[30] == "1":
-                    list1.append(row[0])            
+                    list1.append(row[0])
+        '''count_classes = pd.value_counts(data['Class'], sort=True)
+        count_classes.plot(kind='bar', rot=0)
+        plt.title("Distributed Transactions")
+        plt.xticks(range(2), ['Normal', 'Fraud'])
+        plt.xlabel("Class")
+        plt.ylabel("Frequency")
+        plt.show()'''
+
+        labels = 'Not Fraud', 'Fraud'
+        sizes = [99.8,0.2]
+        explode = (0, 0.1)
+        fig1, ax1 = plt.subplots()
+        ax1.pie(sizes, explode=explode, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90)
+        ax1.axis('equal')
+        plt.show()
         if time in list1:
             return render(request,'fraud.html',dictionary)
         else:
             return render(request,'notfraud.html',dictionary)
         
-'''def fraud(request):
-    if request.method=='GET':
-        global o
-        dictionary={}
-        dictionary['some_string']=o[0]
-        dictionary['some_other']=o[1]
-        dictionary['other_other']=o[2]
-        print(dictionary)
-        return render(request,'fraud.html', dictionary)
-
-def notfraud(request):
-    global st1
-    global st2
-    global st3
-    if request.method=='GET':
-        return render(request,'notfraud.html', {'st1': st1},{'st2': st2},{'st3': st3})'''   
     
    
     

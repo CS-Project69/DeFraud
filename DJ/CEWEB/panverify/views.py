@@ -2,8 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import random
 import string
-'''from streamlit import caching
-caching.clear_cache()'''
+
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -75,4 +74,4 @@ def panv(request):
         captcha=''
         return render(request,'notverified.html')
     
-'''This function verifies pan'''
+

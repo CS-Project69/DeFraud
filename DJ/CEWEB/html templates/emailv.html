@@ -56,9 +56,9 @@ input[type=submit]:hover {
         <div class="center">
             <form action='{% url "emailv" %}' method="POST"> {% csrf_token %} 
               <label for="emailbody">Paste the body of the Email here:</label>
-              <textarea id="emailbody" name="emailbody" placeholder="Write something.." style="height:200px; width:420px ;"></textarea>
+              <textarea required id="emailbody" name="emailbody" placeholder="Write something.." style="height:200px; width:420px ;"></textarea>
               <br>
-              Enter Phone no.: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=20 name="phoneno" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+              Enter Phone no.: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input required type="text" maxlength=20 name="phoneno" onCopy='return true' onDrag='return true' onDrop='return true' onPaste='return true' autocomplete=off></input><br>
               <br>
             <div class="center1">
                 <input type="Submit" value="Submit"></input>

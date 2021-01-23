@@ -35,15 +35,15 @@ def emailv(request):
         return render(request,'emailv.html')
     if request.method=='POST':
         sms=request.POST['emailbody']
-        phoneno=request.POST['phoneno']
-        if len(phoneno)==13:
+        number=request.POST['phoneno']
+        if len(number) in [8,9,10,11,12,13,14,15]:
             from phonenumbers import geocoder
-            phone_number = phonenumbers.parse(phoneno) 
+            phone_number = phonenumbers.parse(number) 
             country = geocoder.description_for_number(phone_number,'en')
             from phonenumbers import carrier
-            service_provider = phonenumbers.parse(phoneno)
+            service_provider = phonenumbers.parse(number)
             carry=carrier.name_for_number(service_provider,'en')
-        if len(phoneno)!=13:
+        if len(number) not in [8,9,10,11,12,13,14,15]:
             return render(request,'wronginput.html')
         spam_counter = 0
         ham_counter = 0

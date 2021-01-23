@@ -58,9 +58,9 @@ input[type=submit]:hover {
     <div class="banner-area" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
         <div class="center">
             <form action='{% url "creditv" %}' method="POST"> {% csrf_token %} 
-                Enter Credit Card Number:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=16 name="Creditno" onCopy='return true' onDrag='return false' onDrop='return false' onPaste='return true' autocomplete=off></input><br>
+                Enter Credit Card Number:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input required type="text" maxlength=16 name="Creditno" onCopy='return true' onDrag='return false' onDrop='return false' onPaste='return true' autocomplete=off></input><br>
             <br>
-            Enter Publisher Name:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" maxlength=30 name="Pubname" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
+            Enter Publisher Name:  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input required type="text" maxlength=30 name="Pubname" onCopy='return false' onDrag='return false' onDrop='return false' onPaste='return false' autocomplete=off></input><br>
             <br>
             <div class="center1">
                 <input type="Submit" value="Submit"></input>
