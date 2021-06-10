@@ -1,5 +1,7 @@
 # TEAM-5
 
+Developed as a part of our Class 12 Computer Science Project, DeFraud offers four tools for the users: 
+
 1// Email Spam Detection: 
 
 A tool which analyses the email given in as input and cross references it with commonly used terms 
