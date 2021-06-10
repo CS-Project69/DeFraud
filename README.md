@@ -1,6 +1,6 @@
 # TEAM-5
 
-Developed as a part of our Class 12 Computer Science Project, DeFraud offers four tools for the users: 
+Developed as a part of our Class 12 Computer Science Project, DeFraud offers four tools to the users: 
 
 1// Email Spam Detection: 
 
